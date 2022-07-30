@@ -1,5 +1,3 @@
-import { style } from '@angular/animations';
-import { NgClass, NgStyle } from '@angular/common';
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
@@ -10,10 +8,6 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 })
 export class Lesson1Component implements OnInit {
 
-
-// писати 
-// public name!: string -якщо не задавати 
-// значення то потрібно ставити знак! після назви
 tInput=``
 badWords=``;
 boolean=false;
@@ -28,22 +22,22 @@ textarea!:string;
 
   addClick():void{
     let word=this.tInput
-    
+
     if(this.tInput===``){
-      
+
     alert(`erorr`)
     this.boolean=true
-    
+
     }
     else{
       this.array.push(word)
       console.log(this.array);
-      
+
       this.badWords+=word+` `;
       this.tInput=``;
       this.boolean=false
     }
-    
+
   }
   resetClick():void{
     this.badWords=``;
@@ -65,12 +59,12 @@ textarea!:string;
            for (let i=0;i<length;i++){
                         res+=star
                     }
-                    this.textarea=this.textarea.replaceAll(element,res)  
+                    this.textarea=this.textarea.replaceAll(element,res)
        }
       }
 
     }
-    
+
   }
-  
+
 }
