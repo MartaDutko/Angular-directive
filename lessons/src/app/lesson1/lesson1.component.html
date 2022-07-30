@@ -1,0 +1,14 @@
+<div class="box">
+<h1 class="titel">Angular list of prohibited words:</h1>
+<div class="conteiner">
+<p class="words" id="badWords">Bad words: {{badWords}}</p>
+    <div class="inputBlock" id="inputBlock">
+        <input type="text"  class="textInput" placeholder="word here..." id="textInput" [ngClass]="{redText: boolean}" 
+         [(ngModel)]="tInput">
+        <input type="button" class="btn btn-add" id="btn-add" value="ADD"   (click)="addClick()" >
+        <input type="button" class="btn btn-reset" value="RESET" id="reset" (click)="resetClick()">
+    </div>
+    <textarea placeholder="text here..." class="bigText" id="textarea" [ngClass]="{redText: booleanCenzor}"  [(ngModel)]="textarea"> </textarea>
+    <input type="button" class="cenzor" value="Cenzor"id="cenzor" (click)="cenzor()" >
+</div>
+</div>
