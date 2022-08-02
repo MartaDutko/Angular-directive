@@ -1,14 +1,44 @@
-<div class="box">
-<h1 class="titel">Angular list of prohibited words:</h1>
 <div class="conteiner">
-<p class="words" id="badWords">Bad words: {{badWords}}</p>
-    <div class="inputBlock" id="inputBlock">
-        <input type="text"  class="textInput" placeholder="word here..." id="textInput" [ngClass]="{redText: boolean}" 
-         [(ngModel)]="tInput">
-        <input type="button" class="btn btn-add" id="btn-add" value="ADD"   (click)="addClick()" >
-        <input type="button" class="btn btn-reset" value="RESET" id="reset" (click)="resetClick()">
+    <div class="leftBlock styleBlock">
+        <form class="f1">
+            <p>Login</p>
+            <input type="text" placeholder="Enter login" class="styleInput" id="login" [(ngModel)]="newLogin"
+                name="login">
+            <p>Password</p>
+            <input type="password" placeholder="Enter password" class="styleInput" id="password"
+                [(ngModel)]="newPassword" name="password">
+            <p>Email address</p>
+            <input type="email" placeholder="Enter email" class="styleInput" id="email" [(ngModel)]="newEmail"
+                name="email">
+        </form>
+        <button class="btn-addUser" id="firstAdd" (click)="addUser()" *ngIf="!buttonStatys">Add user</button>
+        <button class="btn-addUser  btn-editUser" (click)="editUser()"*ngIf="buttonStatys">Save edit user</button>
     </div>
-    <textarea placeholder="text here..." class="bigText" id="textarea" [ngClass]="{redText: booleanCenzor}"  [(ngModel)]="textarea"> </textarea>
-    <input type="button" class="cenzor" value="Cenzor"id="cenzor" (click)="cenzor()" >
-</div>
+    <div class="rightBlock styleBlock">
+        <table class="fTtable">
+            <tr>
+                <th>#</th>
+                <th>Login</th>
+                <th>Password</th>
+                <th>Email</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <ng-container *ngFor="let user of arrUser; let i = index">
+                <tr>
+                    <th [textContent]="i+1"></th>
+                    <th [textContent]="user.login"></th>
+                    <th [textContent]="user.password"></th>
+                    <th [textContent]="user.email"></th>
+                    <th>
+                        <button class="btnEdit" (click)="editName(i)">Edit</button>
+                    </th>
+                    <th>
+                        <button class="btnDelete" (click)="deleteName(i)" [disabled]="buttonStatys">Delete</button>
+                    </th>
+                </tr>
+
+            </ng-container>
+        </table>
+    </div>
 </div>

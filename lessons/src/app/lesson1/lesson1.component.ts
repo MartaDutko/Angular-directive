@@ -8,63 +8,60 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 })
 export class Lesson1Component implements OnInit {
 
-tInput=``
-badWords=``;
-boolean=false;
-booleanCenzor=false;
-array:Array<string>=[];
-textarea!:string;
+
+  newLogin=``;
+  newPassword=``;
+  newEmail=``;
+  arrUser:Array<any>=[];
+  buttonStatys=false;
+  editIndex!:number;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  addClick():void{
-    let word=this.tInput
 
-    if(this.tInput===``){
-
-    alert(`erorr`)
-    this.boolean=true
-
-    }
-    else{
-      this.array.push(word)
-      console.log(this.array);
-
-      this.badWords+=word+` `;
-      this.tInput=``;
-      this.boolean=false
-    }
-
-  }
-  resetClick():void{
-    this.badWords=``;
-    this.textarea=``
-  }
-
-  cenzor():void{
-    if(this.textarea===undefined ||this.textarea===``){
+  
+  addUser():void{
+    if(this.newLogin ===`` || this.newPassword===`` || this.newEmail===``){
       alert(`error`)
-      this.booleanCenzor=true
     }
     else{
-      this.booleanCenzor=false;
-      for (const element of this.array) {
-       if( this.textarea.includes(element)){
-        let length=element.length
-           let star=`*`
-           let res=``
-           for (let i=0;i<length;i++){
-                        res+=star
-                    }
-                    this.textarea=this.textarea.replaceAll(element,res)
-       }
-      }
-
+      let login=this.newLogin;
+      let password=this.newPassword;
+      let email=this.newEmail;
+      let obj={login:login, password:password,email: email}
+      this.arrUser.push(obj)
+      console.log(this.arrUser);
+      this.newLogin=``;
+      this.newPassword=``;
+      this.newEmail=``;
     }
 
   }
+
+  deleteName(index:number):void{
+    this.arrUser.splice(index,1)
+  }
+  editName(index:number):void{
+    this.newLogin=this.arrUser[index].login
+    this.newPassword=this.arrUser[index].password
+    this.newEmail=this.arrUser[index].email
+    this.editIndex=index;
+    this.buttonStatys=true;
+  }
+  editUser():void{
+    let login=this.newLogin;
+    let password=this.newPassword;
+    let email=this.newEmail;
+    let obj={login:login, password:password,email: email}
+    this.arrUser[this.editIndex]=obj
+    this.newLogin=``;
+    this.newPassword=``;
+    this.newEmail=``;
+    this.buttonStatys=false;
+  }
+
 
 }

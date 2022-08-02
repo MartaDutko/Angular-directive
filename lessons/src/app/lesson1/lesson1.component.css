@@ -1,78 +1,83 @@
-.box{
-    width: 100vw;
-    height: 100vh;
+body{
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    font-family: sans-serif;
 }
-h1{
-    padding: 0;
-    margin: 0;
+p{
+ margin: 0 0 10px 0;
 }
-.titel{
-    width: 100%;
-    height: 50px;
-    text-align: center;
-    background-color: #dcdcdc;
-    border-bottom: 1px solid gray;
-    position: absolute;
-    top: 0;
-    left: 0;
+li{
+    list-style-type: none;
 }
+ul {
+    margin-left: 0; 
+    padding-left: 0;
+   }
 .conteiner{
-    width: 70%;
-    height: 300px;
-    padding: 5px;
-    border: 5px;
-    background-color: #eceaea;
-}
-.words{
-    font-size: 25px;
-    font-weight: bold;
-    /*background-color: aqua;*/
-}
-.inputBlock{
-    width: 100%;
-    height: 50px;
-    /*background-color: aqua;*/
+    width: 80%;
+    height: 500px;
     display: flex;
-    justify-content: space-evenly;
+    margin-top: 50px;
 }
-.textInput{
-    width: 60%;
-    height: 20px;
+.styleBlock{
+    width: 50%;
+    height: 100%;
 }
-.btn{
-    width: 18%;
-    height: 25px;
-    border: 0;
-    border-radius: 5px;
-}
-.btn-add{
-    background-color: yellow;
-}
-.btn-reset{
-    color: white;
-    background-color: red;
-}
-.bigText{
-    width: 99%;
-    height: 100px;
+.styleInput{
+    width: 90%;
+    height: 30px;
+    margin-bottom: 20px;
     border: 1px solid grey;
     border-radius: 5px;
-    overflow: scroll;
 }
-.cenzor{
-    width: 100%;
-    height: 35px;
-    border: 0;
-    margin-top: 10px;
+.btn-addUser{
+    width: 100px;
+    height: 40px;
     border-radius: 5px;
-    background-color: #35c235;
+    border: 1px solid green;
+    background-color: rgba(0, 0, 0, 0);
+    color: green;
+}
+.rightBlock{
+    padding-top: 20px;
+}
+.firstTable{
+    width: 100%;
+    height: max-content;
+    padding-top: 10px;
+    border-top: 1px solid grey ;
+    border-bottom: 1px solid grey ;
 }
 
-.redText{
+.fTtable{
+    width: 100%;
+    height: max-content;
+    padding-top: 10px;
+    border-top: 1px solid grey ;
+    border-bottom: 1px solid grey ;
+}
+.btnEdit{
+    width: 60px;
+    height: 30px;
+    color: black;
+    background-color: orange;
+    border: 0;
     border-radius: 5px;
-    border: 1px solid red;
+}
+.btnDelete{
+    width: 60px;
+    height: 30px;
+    color: white;
+    background-color: red;
+    border: 0;
+    border-radius: 5px;
+}
+.weight{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.buttons{
+display: flex;
+justify-content: space-between;
 }
